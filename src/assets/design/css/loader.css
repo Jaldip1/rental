@@ -1,0 +1,14 @@
+.loader {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	border: 24px solid #fff;
+	border-color: #2eca6a #fff #fff #fff;
+	animation: rotate 2s steps(4) infinite;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}

@@ -1,0 +1,1 @@
+export const API_URL_LOCAL = 'https://413b1956-ec1e-4258-ac08-13c873d148fb.mock.pstmn.io/'
