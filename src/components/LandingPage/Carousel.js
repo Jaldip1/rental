@@ -8,7 +8,7 @@ export const Slider = () => (
         <Carousel.Item>
             <img
                 className="d-block w-100"
-                src={ slider_1 }
+                src="https://s42814.pcdn.co/wp-content/uploads/2019/12/house_styles_xl-1.jpg"
                 alt="First slide"
             />
             <Carousel.Caption>
@@ -20,7 +20,7 @@ export const Slider = () => (
         <Carousel.Item>
             <img
                 className="d-block w-100"
-                src={ slider_1 }
+                src="https://www.jamesedition.com/stories/wp-content/uploads/2022/03/mansions_main_fin-1.jpg"
                 alt="Second slide"
             />
             <Carousel.Caption>

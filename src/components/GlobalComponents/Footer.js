@@ -7,29 +7,28 @@ class Footer extends React.Component {
                 <section className="section-footer">
                     <div className="container">
                         <div className="row">
-                            <div className="col-sm-12 col-md-4">
+                            <div className="col-sm-12 col-md-6">
                                 <div className="widget-a">
                                     <div className="w-header-a">
                                         <h3 className="w-title-a text-brand">EstateAgency</h3>
                                     </div>
                                     <div className="w-body-a">
                                         <p className="w-text-a color-text-a">
-                                            <h1>{process.env.REACT_APP_TITLE}</h1>
+                                            {/*<h1>{process.env.REACT_APP_TITLE}</h1>*/}
                                             Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
                                             sed aute irure.
                                         </p>
                                     </div>
                                     <div className="w-footer-a">
                                         <ul className="list-unstyled">
+                                            {/*<li className="color-a"><span className="color-text-a">Phone .</span> +1 (123) 123 3333 </li>*/}
                                             <li className="color-a">
-                                                <span className="color-text-a">Phone .</span> contact@example.com</li>
-                                            <li className="color-a">
-                                                <span className="color-text-a">Email .</span> +54 356 945234</li>
+                                                <span className="color-text-a">Email </span> contact@example.com</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-sm-12 col-md-4 section-md-t3">
+                            <div className="col-sm-12 col-md-6 section-md-t3">
                                 <div className="widget-a">
                                     <div className="w-header-a">
                                         <h3 className="w-title-a text-brand">The Company</h3>
@@ -38,7 +37,7 @@ class Footer extends React.Component {
                                         <div className="w-body-a">
                                             <ul className="list-unstyled">
                                                 <li className="item-list-a">
-                                                    <i className="fa fa-angle-right"></i> <a href="#">Site Map</a>
+                                                    <i className="fa fa-angle-right"></i> Site Map
                                                 </li>
                                                 <li className="item-list-a">
                                                     <i className="fa fa-angle-right"></i> <a href="#">Legal</a>
@@ -60,7 +59,7 @@ class Footer extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-sm-12 col-md-4 section-md-t3">
+                            {/*<div className="col-sm-12 col-md-4 section-md-t3">
                                 <div className="widget-a">
                                     <div className="w-header-a">
                                         <h3 className="w-title-a text-brand">International sites</h3>
@@ -88,7 +87,7 @@ class Footer extends React.Component {
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div>*/}
                         </div>
                     </div>
                 </section>
@@ -146,7 +145,7 @@ class Footer extends React.Component {
                                 </div>
                                 <div className="copyright-footer">
                                     <p className="copyright color-text-a">
-                                        &copy; Copyright
+                                        &copy; Copyright &nbsp;
                                         <span className="color-a">EstateAgency</span> All Rights Reserved.
                                     </p>
                                 </div>

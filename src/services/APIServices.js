@@ -1,7 +1,8 @@
 import axios from "axios";
-import { API_URL_LOCAL } from "../common/const"
+import { API_URL_LOCAL, countriesStates } from "../common/const"
 // import Cookies from "universal-cookie"
 const apiEndPoint = process.env.NODE_ENV === 'production' ? API_URL_LOCAL : API_URL_LOCAL;
+
 const axiosInstance = axios.create({
     baseURL: apiEndPoint,
 });
@@ -75,8 +76,13 @@ export class ApiService {
     }
 
     async getFruitDetail(appCode) {
-        return await ApiService.getData(`fruits`);
+        return await ApiService.getData(`/fruits`);
         // return appDetails
+    }
+
+    async getStateCountry() {
+        // return await ApiService.getData(`/country`);
+        return countriesStates
     }
 
     /*async getAllApplications(appId) {

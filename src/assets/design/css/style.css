@@ -2033,3 +2033,16 @@ footer .credits {
         max-width: 100%; /* set the max-width to 100% */
         height: auto; /* this will preserve the aspect ratio of the image */
     }
+
+.login-wrap {
+    width: 100%;
+    margin: auto;
+    max-width: 685px;
+    position: relative;
+}
+
+.nav-act {
+    color: #2eca6a !important;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
