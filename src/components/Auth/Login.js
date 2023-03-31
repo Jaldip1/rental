@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Badge from 'react-bootstrap/Badge';
 import { verifyEmail, verifyPass } from "../../common/globalutils";
+import { ApiService } from "../../services/APIServices";
 import "../../assets/design/css/register.css"
 
 export const Login = () => {
+	const _apiService = new ApiService();
 	const data = {
-		email: "",
-		password: "",
+		email: "admin",
+		password: "admin",
 	}
 
-	const err = {
-		email: "",
-		password: ""
-	}
+	const err = {}
 
 	let errorMessages = {}
 
@@ -39,16 +38,16 @@ export const Login = () => {
 		errorsDetails(errorMessages)
 	}
 
-	const onSave = (event) => {
+	const onSave = async (event) => {
 		event.preventDefault();
 
-		errCheck()
+		
+			const details = await _apiService.postLogin(formDetails) || {}
+			if (!details || details.error) {
 
-		if (errors) {
-			return
-		} else {
-			console.log(formDetails)
-		}
+			} else {
+
+			}
 	}
 
     return (
@@ -59,22 +58,15 @@ export const Login = () => {
 					<div className="row">
 						<div className="col-md-12 col-lg-8">
 							<div className="title-single-box">
-								<h1 className="title-single">Welcome to Estate Agency</h1>
+								<h1 className="title-single">Welcome to Trust Accommodation</h1>
 								{/*<span class="color-text-a">Grid Properties</span>*/}
 							</div>
 						</div>
-						{/*<div class="col-md-12 col-lg-4">
-            <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="#">Home</a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                        Properties Grid
-                    </li>
-                </ol>
-            </nav>
-        </div>*/}
+						<Link to="/register" className="col-md-12 col-lg-4 breadcrumb-box justify-content-lg-end">
+							<Badge className="fs-5" pill bg="info">
+                                    New User, Register?
+                                </Badge>
+						</Link>
 					</div>
 				</div>
 			</section>
@@ -117,6 +109,10 @@ export const Login = () => {
 				<Button variant="primary" type="submit" onClick={(e) => onSave(e)}>
 					Log In
 				</Button>
+				<Form.Group className="mt-3">
+				<Link to="/resetPassword">Forgot Password?</Link>
+				</Form.Group>
+				
 			</Form>
 		</>
     )

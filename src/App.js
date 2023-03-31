@@ -11,6 +11,9 @@ import Nav from "./components/GlobalComponents/Nav";
 import Footer from "./components/GlobalComponents/Footer";
 import { Login } from "./components/Auth/Login";
 import Properties from "./components/Property/Properties";
+import { ResetPassword } from "./components/Auth/ResetPassword";
+import PropertyDetails from "./components/Property/PropertyDetails";
+import Profile from "./components/Auth/Profile";
 
 function App() {
     let url = window.location.href.split("/")
@@ -25,10 +28,13 @@ function App() {
             <Routes>
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/resetPassword" element={<ResetPassword />} />
                 <Route path="/" element={<Landing />} />
                 <Route path="*" element={<Landing />} /> // page-not-found route
                 <Route path="/latestProperty" element={<LatestProperty />} />
                 <Route path="/properties" element={<Properties />} />
+                <Route path="/property/:id" element={<PropertyDetails />} />
+                <Route path="/profile" element={<Profile/>} />
             </Routes>
             <Footer />
         </BrowserRouter>

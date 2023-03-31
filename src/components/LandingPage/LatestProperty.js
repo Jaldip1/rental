@@ -1,5 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+const totalProperties = [
+    "https://s42814.pcdn.co/wp-content/uploads/2019/12/house_styles_xl-1.jpg",
+    "https://www.jamesedition.com/stories/wp-content/uploads/2022/03/mansions_main_fin-1.jpg",
+    "https://img.staticmb.com/mbcontent//images/uploads/2022/12/Most-Beautiful-House-in-the-World.jpg"
+]
 
 class LatestProperty extends React.Component {
 
@@ -20,7 +25,7 @@ class LatestProperty extends React.Component {
                         </div>
                     </div>
                     <div id="property-carousel" className="owl-carousel owl-theme">
-                        
+
                     </div>
                 </div>
             </section>

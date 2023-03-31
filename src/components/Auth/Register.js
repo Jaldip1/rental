@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../assets/design/css/register.css";
-import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import Loader from "../../common/Loader";
+import Badge from 'react-bootstrap/Badge';
 import { ApiService } from "../../services/APIServices";
 import { verifyEmail, verifyPass, verifyText } from "../../common/globalutils";
 
@@ -111,18 +108,11 @@ export const Register = () => {
 								{/*<span class="color-text-a">Grid Properties</span>*/}
 							</div>
 						</div>
-						{/*<div class="col-md-12 col-lg-4">
-                    <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="#">Home</a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">
-                                Properties Grid
-                            </li>
-                        </ol>
-                    </nav>
-                </div>*/}
+						<Link to="/login" className="col-md-12 col-lg-4 breadcrumb-box justify-content-lg-end">
+							<Badge className="fs-5" pill bg="info">
+                                    Already User, Login?
+                                </Badge>
+						</Link>
 					</div>
 				</div>
 			</section>
