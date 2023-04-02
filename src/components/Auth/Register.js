@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../assets/design/css/register.css";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -7,12 +7,16 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Loader from "../../common/Loader";
 import Badge from 'react-bootstrap/Badge';
+import {toast} from "react-toastify"
 import { ApiService } from "../../services/APIServices";
 import { verifyEmail, verifyPass, verifyText } from "../../common/globalutils";
+import { toastTimeOut } from "../../common/const";
 
 
 export const Register = () => {
+	let navigate = useNavigate();
 	const _apiService = new ApiService();
+	
 	const data = {
 		firstName: "",
 		lastName: "",
@@ -82,18 +86,27 @@ export const Register = () => {
 			gender: verifyText("Gender", (formDetails && formDetails.gender) || "")
 		}
 
-		errorsDetails(errorMessages)
+		return errorMessages;
 	}
 
-	const onSave = (event) => {
+	const onSave = async (event) => {
 		event.preventDefault();
-
-		errCheck()
+		const errKeys = errCheck()
 		
-		if (errors) {
+		const isErr = Object.values(errKeys).filter(value => value !== "") || [];		
+		if (isErr && isErr.length) {
+			errorsDetails(errKeys)
+			toast("Please add required field", { autoClose: toastTimeOut, type: toast.TYPE.ERROR })
 			return
 		} else {
 			console.log(formDetails)
+			errorsDetails({})
+			toast("Registration successfully", { autoClose: toastTimeOut, type: toast.TYPE.SUCCESS })
+			navigate("/login");
+			const details = await _apiService.postRegistration(formDetails) || {}
+			localStorage.setItem('Name', "Admin");
+			localStorage.setItem('token', "thisisthedevenv");
+			
 		}
 	}
 

@@ -14,17 +14,19 @@ import Properties from "./components/Property/Properties";
 import { ResetPassword } from "./components/Auth/ResetPassword";
 import PropertyDetails from "./components/Property/PropertyDetails";
 import Profile from "./components/Auth/Profile";
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
     let url = window.location.href.split("/")
     const urlPath = (url && url[3]) || ""
-    console.log("--------aaa---->")
     /*const notHeaderFooter = ["register", "login"]
     const isHeader = (notHeaderFooter.indexOf(urlPath) !== -1) ? null : <Nav />
     const isFooter = (notHeaderFooter.indexOf(urlPath) !== -1) ? null : <Footer />*/
     return (
         <BrowserRouter>
             <Nav urlPath={urlPath } />
+            <ToastContainer />
             <Routes>
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />

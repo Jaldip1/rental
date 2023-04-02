@@ -35,7 +35,7 @@ export class ApiService {
         return data || response.data;
     }
 
-    static async postMethod(url, data, headers, cancelToken) { debugger
+    static async postMethod(url, data, headers) {
         const config = {
             headers: {
                 ...(headers || {}),
@@ -43,18 +43,15 @@ export class ApiService {
                 "Content-Type": "application/json"
             }
         };
-        if (cancelToken && cancelToken.token) {
-            config.cancelToken = cancelToken.token;
-        }
         let resData = '';
-        const response = await axiosInstance.post(url, data, config).catch(thrown => { debugger
+        const response = await axiosInstance.post(url, data, config).catch(thrown => {
             if (thrown.toString() === 'Cancel') {
                 resData = 'cancel';
             } else {
                 resData = { error: 'something went wrong' };;
             }
         });
-        return resData || response.data;
+        return resData || response.res;
     }
 
     static async putMethod(url, data, headers, cancelToken) {
@@ -84,7 +81,10 @@ export class ApiService {
 
     async postLogin(body) {
         return await ApiService.postMethod(`/user/login`, body);
-        // return appDetails
+    }
+
+    async postRegistration(body) {
+        return await ApiService.postMethod(`/user/register`, body);
     }
 
     async getStateCountry() {
