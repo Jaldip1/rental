@@ -4,6 +4,8 @@ export const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)
 
 export const regexPass = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
 
+export const toastTimeOut = 7000
+
 export const provinceData = {
     "Alberta": [
         "Banff","Brooks", "Calgary", "Edmonton", "Fort McMurray", "Grande Prairie", "Jasper", "Lake Louise", "Lethbridge", "Medicine Hat", "Red Deer", "Saint Albert"
@@ -20,8 +22,8 @@ export const provinceData = {
         "Bathurst", "Caraquet", "Dalhousie", "Fredericton", "Miramichi", "Moncton", "Saint John"
     ],
     "Newfoundland and Labrador": [
-        "Argentia", "Bonavista", "Channel - Port aux Basques", "Corner Brook", "Ferryland", "Gander", "Grand Falls–Windsor", "Happy Valley–Goose Bay", "Harbour Grace", "Labrador City",
-        "Placentia", "Saint Anthony", "St.John’s", "Wabana"
+        "Argentia", "Bonavista", "Channel - Port aux Basques", "Corner Brook", "Ferryland", "Gander", "Grand Fallsï¿½Windsor", "Happy Valleyï¿½Goose Bay", "Harbour Grace", "Labrador City",
+        "Placentia", "Saint Anthony", "St.Johnï¿½s", "Wabana"
     ],
     "Nova Scotia": [
         "Baddeck", "Digby", "Glace Bay", "Halifax", "Liverpool", "Louisbourg", "Lunenburg", "Pictou", "Port Hawkesbury", "Springhill", "Sydney", "Yarmouth"
@@ -30,10 +32,10 @@ export const provinceData = {
         "Borden", "Cavendish", "Charlottetown", "Souris", "Summerside"
     ],
     "Quebec": [
-        "Asbestos", "Baie - Comeau", "Beloeil", "Cap - de - la - Madeleine", "Chambly", "Charlesbourg", "Châteauguay", "Chibougamau", "Côte - Saint - Luc", "Dorval",
-        "Gaspé", "Gatineau", "Granby", "Havre - Saint - Pierre", "Hull", "Jonquière", "Kuujjuaq", "La Salle", "La Tuque", "Lachine", "Laval", "Lévis", "Longueuil", "Magog",
-        "Matane", "Montreal", "Montréal - Nord", "Percé", "Port - Cartier", "Quebec", "Rimouski", "Rouyn - Noranda", "Saguenay", "Saint - Eustache", "Saint - Hubert",
-        "Sainte - Anne - de - Beaupré", "Sainte - Foy", "Sainte - Thérèse", "Sept - Îles", "Sherbrooke", "Sorel - Tracy", "Trois - Rivières", "Val - d’Or", "Waskaganish"
+        "Asbestos", "Baie - Comeau", "Beloeil", "Cap - de - la - Madeleine", "Chambly", "Charlesbourg", "Chï¿½teauguay", "Chibougamau", "Cï¿½te - Saint - Luc", "Dorval",
+        "Gaspï¿½", "Gatineau", "Granby", "Havre - Saint - Pierre", "Hull", "Jonquiï¿½re", "Kuujjuaq", "La Salle", "La Tuque", "Lachine", "Laval", "Lï¿½vis", "Longueuil", "Magog",
+        "Matane", "Montreal", "Montrï¿½al - Nord", "Percï¿½", "Port - Cartier", "Quebec", "Rimouski", "Rouyn - Noranda", "Saguenay", "Saint - Eustache", "Saint - Hubert",
+        "Sainte - Anne - de - Beauprï¿½", "Sainte - Foy", "Sainte - Thï¿½rï¿½se", "Sept - ï¿½les", "Sherbrooke", "Sorel - Tracy", "Trois - Riviï¿½res", "Val - dï¿½Or", "Waskaganish"
     ],
     "Saskatchewan": [
         "Batoche", "Cumberland House", "Estevan", "Flin Flon", "Moose Jaw", "Prince Albert", "Regina", "Saskatoon", "Uranium City"

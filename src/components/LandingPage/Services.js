@@ -33,11 +33,11 @@ class Services extends React.Component {
                                         nec, egestas non nisi.
                                     </p>
                                 </div>
-                                <div className="card-footer-c">
+                                {/*<div className="card-footer-c">
                                     <a href="#" className="link-c link-icon">Read more
                                         <span className="ion-ios-arrow-forward"></span>
                                     </a>
-                                </div>
+                                </div>*/}
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -57,11 +57,11 @@ class Services extends React.Component {
                                         nibh pulvinar a.
                                     </p>
                                 </div>
-                                <div className="card-footer-c">
+                                {/*<div className="card-footer-c">
                                     <a href="#" className="link-c link-icon">Read more
                                         <span className="ion-ios-arrow-forward"></span>
                                     </a>
-                                </div>
+                                </div>*/}
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -81,11 +81,11 @@ class Services extends React.Component {
                                         nec, egestas non nisi.
                                     </p>
                                 </div>
-                                <div className="card-footer-c">
+                                {/*<div className="card-footer-c">
                                     <a href="#" className="link-c link-icon">Read more
                                         <span className="ion-ios-arrow-forward"></span>
                                     </a>
-                                </div>
+                                </div>*/}
                             </div>
                         </div>
                     </div>

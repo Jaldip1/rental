@@ -13,10 +13,20 @@ function SearchBar() {
 
     return (
         <>
-            <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" onClick={handleShow}>
-                <span class="fa fa-search" aria-hidden="true"></span>
+        <>
+            <button type="button" className="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" onClick={handleShow}>
+                <span className="fa fa-search" aria-hidden="true"></span>
             </button>
-
+            <div className="px-2"/>
+            <Link to="/profile">
+                <button type="button" className="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block">
+                    <span className="fa fa-user" aria-hidden="true"></span>
+                </button>
+            </Link>
+            
+        </>
+            
+            
             <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Search Properties</Offcanvas.Title>
@@ -94,16 +104,16 @@ const Nav = (props) => {
                     <button className="navbar-toggler collapsed" type="button" data-toggle="collapse"
                         data-target="#navbarDefault"
                         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <span/>
+                        <span/>
+                        <span/>
                     </button>
-                    <Link className="navbar-brand text-brand" to="/">Estate<span
-                        className="color-b">Agency</span></Link>
+                    <Link className="navbar-brand text-brand" to="/">Trust<span
+                        className="color-b">Accommodation</span></Link>
                     <button type="button" className="btn btn-link nav-search navbar-toggle-box-collapse d-md-none"
                         data-toggle="collapse"
                         data-target="#navbarTogglerDemo01" aria-expanded="false">
-                        <span className="fa fa-search" aria-hidden="true"></span>
+                        <span className="fa fa-search" aria-hidden="true"/>
                     </button>
                     <div className="navbar-collapse collapse justify-content-center">
                         <ul className="navbar-nav">
@@ -130,10 +140,10 @@ const Nav = (props) => {
                                     <a className="dropdown-item" href="agent-single.html">Agent Single</a>
                                 </div>
                             </li>*/}
-                            <li className="nav-item">
+                            {/*<li className="nav-item">
                                 <Link className="nav-link" to="/">Contact</Link>
-                                {/*<a className="nav-link" href='http://localhost:3006'>Contact</a>*/}
-                            </li>
+                                <a className="nav-link" href='http://localhost:3006'>Contact</a>
+                            </li>*/}
                             <li className="nav-item">
                                 <Link className={`nav-link ${path === "/login" ? 'nav-act' : ''}`} to="/login">Login</Link>
                             </li>
@@ -144,6 +154,7 @@ const Nav = (props) => {
                         </ul>
                     </div>
                     <SearchBar placement="end" />
+                    
                 </div>
             </nav>
         )

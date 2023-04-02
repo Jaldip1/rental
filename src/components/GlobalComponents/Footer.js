@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 class Footer extends React.Component {
 
     render() {
@@ -10,11 +11,11 @@ class Footer extends React.Component {
                             <div className="col-sm-12 col-md-6">
                                 <div className="widget-a">
                                     <div className="w-header-a">
-                                        <h3 className="w-title-a text-brand">EstateAgency</h3>
+                                        <h3 className="w-title-a text-brand">TrustAccommodation</h3>
                                     </div>
                                     <div className="w-body-a">
                                         <p className="w-text-a color-text-a">
-                                            {/*<h1>{process.env.REACT_APP_TITLE}</h1>*/}
+                                            {/*<h1>{process.env.JWTSECRET}</h1>*/}
                                             Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
                                             sed aute irure.
                                         </p>
@@ -23,7 +24,7 @@ class Footer extends React.Component {
                                         <ul className="list-unstyled">
                                             {/*<li className="color-a"><span className="color-text-a">Phone .</span> +1 (123) 123 3333 </li>*/}
                                             <li className="color-a">
-                                                <span className="color-text-a">Email </span> contact@example.com</li>
+                                                <span className="color-text-a">Email </span> trust.accommodate@gmail.com</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -40,19 +41,13 @@ class Footer extends React.Component {
                                                     <i className="fa fa-angle-right"></i> Site Map
                                                 </li>
                                                 <li className="item-list-a">
-                                                    <i className="fa fa-angle-right"></i> <a href="#">Legal</a>
+                                                    <i className="fa fa-angle-right"></i> About
                                                 </li>
                                                 <li className="item-list-a">
-                                                    <i className="fa fa-angle-right"></i> <a href="#">Agent Admin</a>
+                                                    <i className="fa fa-angle-right"></i> <Link to="/login">Join Us</Link>
                                                 </li>
                                                 <li className="item-list-a">
-                                                    <i className="fa fa-angle-right"></i> <a href="#">Careers</a>
-                                                </li>
-                                                <li className="item-list-a">
-                                                    <i className="fa fa-angle-right"></i> <a href="#">Affiliate</a>
-                                                </li>
-                                                <li className="item-list-a">
-                                                    <i className="fa fa-angle-right"></i> <a href="#">Privacy Policy</a>
+                                                    <i className="fa fa-angle-right"></i> Privacy Policy
                                                 </li>
                                             </ul>
                                         </div>
@@ -107,14 +102,11 @@ class Footer extends React.Component {
                                             <a href="#">Property</a>
                                         </li>
                                         <li className="list-inline-item">
-                                            <a href="#">Blog</a>
-                                        </li>
-                                        <li className="list-inline-item">
                                             <a href="#">Contact</a>
                                         </li>
                                     </ul>
                                 </nav>
-                                <div className="socials-a">
+                                {/*<div className="socials-a">
                                     <ul className="list-inline">
                                         <li className="list-inline-item">
                                             <a href="#">
@@ -142,11 +134,11 @@ class Footer extends React.Component {
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div>*/}
                                 <div className="copyright-footer">
                                     <p className="copyright color-text-a">
                                         &copy; Copyright &nbsp;
-                                        <span className="color-a">EstateAgency</span> All Rights Reserved.
+                                        <span className="color-a">TrustAccommodation</span> All Rights Reserved.
                                     </p>
                                 </div>
                             </div>

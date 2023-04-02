@@ -35,15 +35,14 @@ export class ApiService {
         return data || response.data;
     }
 
-    static async postMethod(url, data, headers, cancelToken) {
+    static async postMethod(url, data, headers) {
         const config = {
             headers: {
-                ...(headers || {})
+                ...(headers || {}),
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json"
             }
         };
-        if (cancelToken && cancelToken.token) {
-            config.cancelToken = cancelToken.token;
-        }
         let resData = '';
         const response = await axiosInstance.post(url, data, config).catch(thrown => {
             if (thrown.toString() === 'Cancel') {
@@ -52,7 +51,7 @@ export class ApiService {
                 resData = { error: 'something went wrong' };;
             }
         });
-        return resData || response.data;
+        return resData || response.res;
     }
 
     static async putMethod(url, data, headers, cancelToken) {
@@ -78,6 +77,14 @@ export class ApiService {
     async getFruitDetail(appCode) {
         return await ApiService.getData(`/fruits`);
         // return appDetails
+    }
+
+    async postLogin(body) {
+        return await ApiService.postMethod(`/user/login`, body);
+    }
+
+    async postRegistration(body) {
+        return await ApiService.postMethod(`/user/register`, body);
     }
 
     async getStateCountry() {

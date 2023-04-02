@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../assets/design/css/register.css";
-import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import Loader from "../../common/Loader";
+import Badge from 'react-bootstrap/Badge';
+import {toast} from "react-toastify"
 import { ApiService } from "../../services/APIServices";
 import { verifyEmail, verifyPass, verifyText } from "../../common/globalutils";
+import { toastTimeOut } from "../../common/const";
 
 
 export const Register = () => {
+	let navigate = useNavigate();
 	const _apiService = new ApiService();
+	
 	const data = {
 		firstName: "",
 		lastName: "",
@@ -85,18 +86,27 @@ export const Register = () => {
 			gender: verifyText("Gender", (formDetails && formDetails.gender) || "")
 		}
 
-		errorsDetails(errorMessages)
+		return errorMessages;
 	}
 
-	const onSave = (event) => {
+	const onSave = async (event) => {
 		event.preventDefault();
-
-		errCheck()
+		const errKeys = errCheck()
 		
-		if (errors) {
+		const isErr = Object.values(errKeys).filter(value => value !== "") || [];		
+		if (isErr && isErr.length) {
+			errorsDetails(errKeys)
+			toast("Please add required field", { autoClose: toastTimeOut, type: toast.TYPE.ERROR })
 			return
 		} else {
 			console.log(formDetails)
+			errorsDetails({})
+			toast("Registration successfully", { autoClose: toastTimeOut, type: toast.TYPE.SUCCESS })
+			navigate("/login");
+			const details = await _apiService.postRegistration(formDetails) || {}
+			localStorage.setItem('Name', "Admin");
+			localStorage.setItem('token', "thisisthedevenv");
+			
 		}
 	}
 
@@ -111,18 +121,11 @@ export const Register = () => {
 								{/*<span class="color-text-a">Grid Properties</span>*/}
 							</div>
 						</div>
-						{/*<div class="col-md-12 col-lg-4">
-                    <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="#">Home</a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">
-                                Properties Grid
-                            </li>
-                        </ol>
-                    </nav>
-                </div>*/}
+						<Link to="/login" className="col-md-12 col-lg-4 breadcrumb-box justify-content-lg-end">
+							<Badge className="fs-5" pill bg="info">
+                                    Already User, Login?
+                                </Badge>
+						</Link>
 					</div>
 				</div>
 			</section>
